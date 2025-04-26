@@ -131,6 +131,15 @@ int main () {
                     cin.ignore();
                     cin.get();
             break;
+
+            case 10:
+                    sort_desc_data(array, a);
+                    cout << "Data DESCENDING SORTED........" << endl;
+                    cout << "Press ENTER.........";
+                    cin.ignore();
+                    cin.get();
+            break;
+
         }
     }while (ch != 0);
 
@@ -333,6 +342,20 @@ void sort_asc_data(int* arr, int a){
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tmp;
             } 
+        }
+    }
+}
+
+//sorting data (descending)
+void sort_desc_data(int* arr, int a){
+    int tmp;
+    for (int i = 0; i < a - 1; i++){
+        for (int j = 0; j < a - 1 - i; j++){
+            if (arr[j] < arr[j + 1]){
+                tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
         }
     }
 }
